@@ -16,10 +16,10 @@ cc.Class({
     },
 
      onCollisionEnter: function (other, self) {
-          if(other.node.group ==='wall'){
-              cc.game.pause()
-              return
-          }
+        //   if(other.node.group ==='wall'){
+        //       cc.game.pause()
+        //       return
+        //   }
         var otherAabb = other.world.aabb;//得到另一个的框框（rect）
         var otherPreAabb = other.world.preAabb.clone();//上一次计算的碰撞组件另一个的 aabb 碰撞框
         var selfAabb = self.world.aabb;//得到自己的框框

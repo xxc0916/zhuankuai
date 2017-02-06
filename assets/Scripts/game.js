@@ -16,29 +16,34 @@ cc.Class({
         n.push(a)
     }
     //this.disLine =[];
-    this.end=false;
-     for(let i=0;i<50;i++){
-       this.addLine(i)
-     }  
+     this.end=false;
+    //  for(let i=0;i<50;i++){
+    //   this.addLine(i)
+    //  } 
+    this.addLine(0)
+    this.u = 1
+    this.schedule(function() {
+      this.addLine(this.u)
+      this.u ++
+    }, 75/Math.abs(speedy));
     },
    
     addLine(num){
     var a = Math.floor(Math.random()*4);
-   
+    
     var oneLine = []
     for(let i =0;i<4;i++){
-      
          var monster = cc.instantiate(this.prefabs[i===a?0:1]);
-         
          if(monster.group ==='hong'){
              oneLine.push(monster)
          }
          monster.parent = this.node;
          monster.line = num + 100
-         monster.position =cc.p(160*i - 240,75*num+200)
+         monster.position =cc.p(160*i - 240,504)
     } 
     n.push(oneLine)
     },
+    
      zhi:function(){
         var Request ={};
         Request = GetRequest();

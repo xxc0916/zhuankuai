@@ -1,2 +1,2 @@
 window.n=[];
-window.speedy = -50
+window.speedy = -100
